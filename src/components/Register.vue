@@ -29,7 +29,15 @@ export default {
     methods:{
         submitHandler(e){
             e.preventDefault()
-            this.$store.commit('setLoading')
+            const data = {
+                email:"admian12@a.ac",
+                password:"1a3345678",
+                username:"aadmin2",
+            }
+            this.$store
+            .dispatch('register',data)
+            .then(user => console.log('USER',user))
+            .catch(err => console.log('ERROR',err))
         },
     },
 }
